@@ -10,10 +10,13 @@ defmodule StoryMapperWeb.ProjectLive.Show do
 
   @impl true
   def handle_params(%{"id" => id}, _, socket) do
+    project = Projects.get_project!(id) |> StoryMapper.Repo.preload(:stories)
     {:noreply,
      socket
      |> assign(:page_title, page_title(socket.assigns.live_action))
-     |> assign(:project, Projects.get_project!(id))}
+     |> assign(:project, project)
+     |> assign(:stories, project.stories)}
+    #  |> assign(:project, Projects.get_project!(id))}
   end
 
   defp page_title(:show), do: "Show Project"

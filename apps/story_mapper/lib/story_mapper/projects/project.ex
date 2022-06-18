@@ -5,6 +5,8 @@ defmodule StoryMapper.Projects.Project do
   schema "projects" do
     field :title, :string
 
+    has_many :stories, StoryMapper.Stories.Story
+
     timestamps()
   end
 

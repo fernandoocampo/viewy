@@ -20,6 +20,12 @@
     <%= @project.title %>
   </li>
 
+  <li>
+    <%= for story <- @stories do %>
+      <p><%= story.title %></p>
+    <% end %>
+  </li>
+
 </ul>
 
 <span><%= live_patch "Edit", to: Routes.project_show_path(@socket, :edit, @project), class: "button" %></span> |
