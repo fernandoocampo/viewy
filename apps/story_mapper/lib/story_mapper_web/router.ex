@@ -17,6 +17,8 @@ defmodule StoryMapperWeb.Router do
   scope "/", StoryMapperWeb do
     pipe_through :browser
 
+    get "/", PageController, :index
+
     live "/projects", ProjectLive.Index, :index
     live "/projects/new", ProjectLive.Index, :new
     live "/projects/:id/edit", ProjectLive.Index, :edit
