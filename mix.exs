@@ -17,7 +17,8 @@ defmodule Viewy.MixProject do
   # Run "mix help deps" for examples and options.
   defp deps do
     [
-      {:jason, "~> 1.0"}
+      {:jason, "~> 1.0"},
+      {:hackney, "~> 1.9"}
     ]
   end
 end
