@@ -1,0 +1,43 @@
+<h1>Listing Tickers</h1>
+
+<%= if @live_action in [:new, :edit] do %>
+  <.modal return_to={Routes.ticker_index_path(@socket, :index)}>
+    <.live_component
+      module={StoryMapperWeb.TickerLive.FormComponent}
+      id={@ticker.id || :new}
+      title={@page_title}
+      action={@live_action}
+      ticker={@ticker}
+      return_to={Routes.ticker_index_path(@socket, :index)}
+    />
+  </.modal>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Rank</th>
+      <th>Industry</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody id="tickers">
+    <%= for ticker <- @tickers do %>
+      <tr id={"ticker-#{ticker.id}"}>
+        <td><%= ticker.name %></td>
+        <td><%= ticker.rank %></td>
+        <td><%= ticker.industry %></td>
+
+        <td>
+          <span><%= live_redirect "Show", to: Routes.ticker_show_path(@socket, :show, ticker) %></span>
+          <span><%= live_patch "Edit", to: Routes.ticker_index_path(@socket, :edit, ticker) %></span>
+          <span><%= link "Delete", to: "#", phx_click: "delete", phx_value_id: ticker.id, data: [confirm: "Are you sure?"] %></span>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<span><%= live_patch "New Ticker", to: Routes.ticker_index_path(@socket, :new) %></span>

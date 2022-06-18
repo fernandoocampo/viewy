@@ -25,6 +25,13 @@ defmodule StoryMapperWeb.Router do
 
     live "/projects/:id", ProjectLive.Show, :show
     live "/projects/:id/show/edit", ProjectLive.Show, :edit
+
+    live "/tickers", TickerLive.Index, :index
+    live "/tickers/new", TickerLive.Index, :new
+    live "/tickers/:id/edit", TickerLive.Index, :edit
+
+    live "/tickers/:id", TickerLive.Show, :show
+    live "/tickers/:id/show/edit", TickerLive.Show, :edit
   end
 
   # Other scopes may use custom stacks.
