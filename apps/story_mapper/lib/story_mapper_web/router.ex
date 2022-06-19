@@ -27,6 +27,7 @@ defmodule StoryMapperWeb.Router do
     live "/projects/:id/show/edit", ProjectLive.Show, :edit
 
     live "/tickers", TickerLive.Index, :index
+    live "/tickers/dashboard", TickerLive.Dashboard, :dashboard
     live "/tickers/new", TickerLive.Index, :new
     live "/tickers/:id/edit", TickerLive.Index, :edit
 

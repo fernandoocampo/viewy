@@ -1,0 +1,40 @@
+<h1>Results for Industry Dashboard</h1>
+
+<div>
+    <.form
+      let={f}
+      for={:filter}
+      id="filter_data"
+      phx-submit="filter",
+      class="grid grid-cols-2 gap-4 w-full">
+      <%= "Year:" %>
+      <%= select(f, :year, @years, selected: @year) %>
+      <%= "Week:" %>
+      <%= select(f, :week, @weeks, selected: @week) %>
+      <%= submit "Filter" %>
+    </.form>
+</div>
+
+<table>
+  <thead>
+    <caption>week <%= @year %> and year <%= @week %></caption>
+    <tr>
+      <th>Ticker</th>
+      <th>New Rank Avg</th>
+      <th>Old Rank Avg</th>
+      <th>Industry</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody id="tickers">
+    <%= for ticker <- @tickers do %>
+      <tr id={"ticker-#{ticker.id}"}>
+        <td><%= ticker.name %></td>
+        <td><%= ticker.rank %></td>
+        <td><%= ticker.rank %></td>
+        <td><%= ticker.industry %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
