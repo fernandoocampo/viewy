@@ -54,7 +54,7 @@ defmodule Viewy.MixProject do
         "test --cover",
         "test --raise",
         "credo --strict",
-        "dialyzer --plt",
+        "dialyzer",
         "deps.audit"
       ],
       # run `mix setup` in all child apps
@@ -68,7 +68,7 @@ defmodule Viewy.MixProject do
   # tests, in single modules or entire (sets of) applications.
   defp dialyzer do
     [
-      plt_add_apps: [:mix]
+      plt_add_apps: [:mix, :eex, :ex_unit]
     ]
   end
 end

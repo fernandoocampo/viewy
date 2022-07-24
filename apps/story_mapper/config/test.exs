@@ -6,6 +6,7 @@ import Config
 # to provide built-in test partitioning in CI environment.
 # Run `mix help test` for more information.
 config :story_mapper, StoryMapper.Repo,
+  ssl_opts: [log_level: :error],
   username: "postgres",
   password: "postgres",
   hostname: "localhost",

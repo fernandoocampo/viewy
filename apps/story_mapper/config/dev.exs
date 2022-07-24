@@ -2,6 +2,7 @@ import Config
 
 # Configure your database
 config :story_mapper, StoryMapper.Repo,
+  ssl_opts: [log_level: :error],
   username: "postgres",
   password: "postgres",
   hostname: "localhost",

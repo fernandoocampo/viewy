@@ -2,9 +2,9 @@ name: Elixir CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   quality_ci:
@@ -48,6 +48,8 @@ jobs:
           _build
           priv/plts
         key: ${{ runner.os }}-${{ matrix.otp }}-${{ matrix.elixir }}-mix-${{ hashFiles(format('{0}{1}', github.workspace, '/mix.lock')) }}
+        restore-keys: |
+          ${{ runner.os }}-${{ matrix.otp }}-${{ matrix.elixir }}-mix-
 
     - name: Install Dependencies
       if: steps.mix-cache.outputs.cache-hit != 'true'
@@ -60,5 +62,5 @@ jobs:
 
     - name: Check quality.ci
       run: |
-        mix sobelow -r apps/story_mapper
+        mix sobelow -r apps/story_mapper -v
         mix quality.ci
