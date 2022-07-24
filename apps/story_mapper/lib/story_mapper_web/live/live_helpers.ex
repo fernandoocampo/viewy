@@ -1,4 +1,7 @@
 defmodule StoryMapperWeb.LiveHelpers do
+  @moduledoc """
+  This module defines logic for the live helper.
+  """
   import Phoenix.LiveView
   import Phoenix.LiveView.Helpers
 

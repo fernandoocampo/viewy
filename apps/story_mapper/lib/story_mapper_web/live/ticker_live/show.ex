@@ -1,4 +1,7 @@
 defmodule StoryMapperWeb.TickerLive.Show do
+  @moduledoc """
+  This module defines logic for the ticker live show.
+  """
   use StoryMapperWeb, :live_view
 
   alias StoryMapper.Tickers

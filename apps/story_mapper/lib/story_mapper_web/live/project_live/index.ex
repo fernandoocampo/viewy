@@ -1,4 +1,7 @@
 defmodule StoryMapperWeb.ProjectLive.Index do
+  @moduledoc """
+  This module defines logic for the project live index.
+  """
   use StoryMapperWeb, :live_view
 
   alias StoryMapper.Projects

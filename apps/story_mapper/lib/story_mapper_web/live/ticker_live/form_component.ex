@@ -1,4 +1,7 @@
 defmodule StoryMapperWeb.TickerLive.FormComponent do
+  @moduledoc """
+  This module defines logic for the ticker form.
+  """
   use StoryMapperWeb, :live_component
 
   alias StoryMapper.Tickers

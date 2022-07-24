@@ -1,4 +1,7 @@
 defmodule StoryMapper.Tickers.Ticker do
+  @moduledoc """
+  This module defines ticker structure.
+  """
   use Ecto.Schema
   import Ecto.Changeset
 

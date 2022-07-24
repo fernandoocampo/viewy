@@ -1,4 +1,7 @@
 defmodule StoryMapper.Stories.Story do
+  @moduledoc """
+  This module defines a structure for the stories.
+  """
   use Ecto.Schema
   import Ecto.Changeset
 

@@ -1,4 +1,7 @@
 defmodule StoryMapperWeb.Telemetry do
+  @moduledoc """
+  This module defines logic for the telemetry logic.
+  """
   use Supervisor
   import Telemetry.Metrics
 

@@ -1,4 +1,7 @@
 defmodule StoryMapperWeb.ProjectLive.FormComponent do
+  @moduledoc """
+  This module defines logic for the project live form.
+  """
   use StoryMapperWeb, :live_component
 
   alias StoryMapper.Projects

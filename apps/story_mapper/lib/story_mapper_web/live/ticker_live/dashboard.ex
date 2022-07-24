@@ -1,4 +1,7 @@
 defmodule StoryMapperWeb.TickerLive.Dashboard do
+  @moduledoc """
+  This module defines logic for the ticker live dashboard.
+  """
   use StoryMapperWeb, :live_view
 
   alias StoryMapper.Tickers
@@ -26,8 +29,6 @@ defmodule StoryMapperWeb.TickerLive.Dashboard do
 
   @impl true
   def handle_event("filter", %{"filter" => params}, socket) do
-    IO.inspect(params)
-
     {:noreply,
      socket
      |> assign(:selected_choice, params["year"])

@@ -1,4 +1,7 @@
 defmodule StoryMapper.Projects.Project do
+  @moduledoc """
+  This module defines a structure for project.
+  """
   use Ecto.Schema
   import Ecto.Changeset
 

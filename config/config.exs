@@ -17,15 +17,15 @@ import Config
 #       metadata: [:user_id]
 #
 
-  config :phoenix, :json_library, Jason
+config :phoenix, :json_library, Jason
 
-  config :esbuild, :version, "0.14.41"
+config :esbuild, :version, "0.14.41"
 
-  # By default, the umbrella project as well as each child
-  # application will require this configuration file, ensuring
-  # they all use the same configuration. While one could
-  # configure all applications here, we prefer to delegate
-  # back to each application for organization purposes.
-  for config <- "../apps/*/config/config.exs" |> Path.expand(__DIR__) |> Path.wildcard() do
-    import_config config
-  end
+# By default, the umbrella project as well as each child
+# application will require this configuration file, ensuring
+# they all use the same configuration. While one could
+# configure all applications here, we prefer to delegate
+# back to each application for organization purposes.
+for config <- "../apps/*/config/config.exs" |> Path.expand(__DIR__) |> Path.wildcard() do
+  import_config config
+end
