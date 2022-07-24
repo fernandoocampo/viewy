@@ -5,6 +5,10 @@ defmodule StoryMapper.Tickers.Ticker do
   use Ecto.Schema
   import Ecto.Changeset
 
+  @typedoc """
+  Defines tickers schema
+  """
+  @type t :: %__MODULE__{}
   schema "tickers" do
     field :industry, :string
     field :name, :string

@@ -1,4 +1,7 @@
 defmodule StoryMapperWeb.Endpoint do
+  @moduledoc """
+  This module defines the story mapper http endpoint.
+  """
   use Phoenix.Endpoint, otp_app: :story_mapper
 
   # The session will be stored in the cookie and signed,

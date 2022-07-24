@@ -17,6 +17,10 @@ defmodule StoryMapperWeb do
   and import those modules here.
   """
 
+  @doc """
+  runs controller logic.
+
+  """
   def controller do
     quote do
       use Phoenix.Controller, namespace: StoryMapperWeb
@@ -27,6 +31,10 @@ defmodule StoryMapperWeb do
     end
   end
 
+  @doc """
+  runs view logic.
+
+  """
   def view do
     quote do
       use Phoenix.View,
@@ -42,6 +50,10 @@ defmodule StoryMapperWeb do
     end
   end
 
+  @doc """
+  runs live view logic.
+
+  """
   def live_view do
     quote do
       use Phoenix.LiveView,
@@ -51,6 +63,10 @@ defmodule StoryMapperWeb do
     end
   end
 
+  @doc """
+  runs live component logic.
+
+  """
   def live_component do
     quote do
       use Phoenix.LiveComponent
@@ -59,6 +75,10 @@ defmodule StoryMapperWeb do
     end
   end
 
+  @doc """
+  runs componet logic.
+
+  """
   def component do
     quote do
       use Phoenix.Component
@@ -67,6 +87,10 @@ defmodule StoryMapperWeb do
     end
   end
 
+  @doc """
+  runs router logic.
+
+  """
   def router do
     quote do
       use Phoenix.Router
@@ -77,6 +101,10 @@ defmodule StoryMapperWeb do
     end
   end
 
+  @doc """
+  runs channel logic.
+
+  """
   def channel do
     quote do
       use Phoenix.Channel
