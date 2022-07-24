@@ -5,6 +5,10 @@ defmodule StoryMapper.Stories.Story do
   use Ecto.Schema
   import Ecto.Changeset
 
+  @typedoc """
+  Defines stories schema
+  """
+  @type t :: %__MODULE__{}
   schema "stories" do
     field :title, :string
 

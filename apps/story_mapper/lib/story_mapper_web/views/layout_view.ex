@@ -1,4 +1,7 @@
 defmodule StoryMapperWeb.LayoutView do
+  @moduledoc """
+  This module defines the layout view logic.
+  """
   use StoryMapperWeb, :view
 
   # Phoenix LiveDashboard is available only in development by default,

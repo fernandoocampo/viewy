@@ -12,7 +12,8 @@ defmodule Viewy.MixProject do
       preferred_cli_env: [
         "quality.ci": :test,
         quality: :test
-      ]
+      ],
+      elixirc_options: [warnings_as_errors: true]
     ]
   end
 
@@ -27,7 +28,8 @@ defmodule Viewy.MixProject do
       {:hackney, "~> 1.9"},
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.1", only: [:dev, :test], runtime: false},
-      {:mix_audit, "~> 1.0", only: [:dev, :test], runtime: false}
+      {:mix_audit, "~> 1.0", only: [:dev, :test], runtime: false},
+      {:doctor, "~> 0.19.0", only: [:dev, :test], runtime: false}
     ]
   end
 
@@ -50,12 +52,16 @@ defmodule Viewy.MixProject do
         "deps.audit"
       ],
       "quality.ci": [
-        "format --check-formatted",
+        "format --dry-run --check-formatted",
+        "compile --all-warnings --warnings-as-errors",
+        "hex.audit",
+        "deps.unlock --check-unused",
+        "deps.audit",
         "test --cover",
         "test --raise",
         "credo --strict",
-        "dialyzer",
-        "deps.audit"
+        "doctor",
+        "dialyzer"
       ],
       # run `mix setup` in all child apps
       setup: ["cmd mix setup"]

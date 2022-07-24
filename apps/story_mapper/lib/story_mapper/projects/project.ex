@@ -5,6 +5,10 @@ defmodule StoryMapper.Projects.Project do
   use Ecto.Schema
   import Ecto.Changeset
 
+  @typedoc """
+  Defines projects schema
+  """
+  @type t :: %__MODULE__{}
   schema "projects" do
     field :title, :string
 
@@ -13,7 +17,10 @@ defmodule StoryMapper.Projects.Project do
     timestamps()
   end
 
-  @doc false
+  @doc """
+  Defines update project behavior.
+
+  """
   def changeset(project, attrs) do
     project
     |> cast(attrs, [:title])

@@ -1,4 +1,7 @@
 defmodule StoryMapperWeb.ErrorView do
+  @moduledoc """
+  This module defines the error view logic.
+  """
   use StoryMapperWeb, :view
 
   # If you want to customize a particular status code

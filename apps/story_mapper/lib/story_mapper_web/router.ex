@@ -1,4 +1,7 @@
 defmodule StoryMapperWeb.Router do
+  @moduledoc """
+  This module defines the web router.
+  """
   use StoryMapperWeb, :router
 
   pipeline :browser do
